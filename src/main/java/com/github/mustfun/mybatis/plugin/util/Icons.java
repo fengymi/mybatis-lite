@@ -1,10 +1,10 @@
 package com.github.mustfun.mybatis.plugin.util;
 
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.spring.SpringApiIcons;
 import com.intellij.util.PlatformIcons;
-import icons.SpringApiIcons;
 
-import javax.swing.Icon;
+import javax.swing.*;
 
 /**
  * @author yanglin

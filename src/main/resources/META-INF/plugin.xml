@@ -118,10 +118,10 @@
     </change-notes>
 
     <!--多个函数得用到新api-->
-    <idea-version since-build="191.4213"/>
-    <depends optional="true" config-file="">com.intellij.database</depends>
-    <depends optional="true" config-file="">com.intellij.spring</depends>
-    <depends config-file="">com.intellij.modules.java</depends>
+<!--    <idea-version since-build="191.4213"/>-->
+    <depends>com.intellij.database</depends>
+    <depends>com.intellij.spring</depends>
+    <depends>com.intellij.modules.java</depends>
 
 
     <extensionPoints>

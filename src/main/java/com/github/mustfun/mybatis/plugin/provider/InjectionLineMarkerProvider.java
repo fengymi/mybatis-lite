@@ -10,7 +10,6 @@ import com.github.mustfun.mybatis.plugin.util.MybatisConstants;
 import com.intellij.codeInsight.daemon.RelatedItemLineMarkerInfo;
 import com.intellij.codeInsight.daemon.RelatedItemLineMarkerProvider;
 import com.intellij.codeInsight.navigation.NavigationGutterIconBuilder;
-import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.editor.markup.GutterIconRenderer;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.source.PsiClassReferenceType;

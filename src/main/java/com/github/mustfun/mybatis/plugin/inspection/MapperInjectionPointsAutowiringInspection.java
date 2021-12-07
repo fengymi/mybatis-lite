@@ -7,7 +7,6 @@ import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiType;
 import com.intellij.spring.CommonSpringModel;
 import com.intellij.spring.SpringBundle;
-import com.intellij.spring.model.SpringBeanPointer;
 import com.intellij.spring.model.utils.SpringAutowireUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -66,8 +65,8 @@ public class MapperInjectionPointsAutowiringInspection  extends AbstractBaseJava
     private void checkByTypeAutowire(PsiField psiField, PsiType psiType, ProblemsHolder holder, CommonSpringModel model, boolean required) {
         if (!psiField.getSourceElement().getTextRange().isEmpty()) {
             String primaryCandidateName = psiField.getName();
-            Set<SpringBeanPointer> beanPointers = SpringAutowireUtil.autowireByType(model, psiType, primaryCandidateName);
-            Set<SpringBeanPointer> iterableBeanPointers = SpringAutowireUtil.getIterableBeanPointers(psiType, model, primaryCandidateName);
+            Set<?> beanPointers = SpringAutowireUtil.autowireByType(model, psiType, primaryCandidateName);
+            Set<?> iterableBeanPointers = SpringAutowireUtil.getIterableBeanPointers(psiType, model);
             if (beanPointers.isEmpty() && iterableBeanPointers.isEmpty() && required) {
                 if (holder != null && !SpringAutowireUtil.isAutowiredByDefault(psiType)  && !SpringAutowireUtil.isJavaUtilOptional(psiType)) {
                     holder.registerProblem(psiField, getBeansNotFoundMessage(psiType), new LocalQuickFix[0]);
